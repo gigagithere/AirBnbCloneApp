@@ -10,7 +10,7 @@ import MapKit
 
 struct ListingDetailView: View {
     
-    @Environment (\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
     let listing: Listing
     @State private var cameraPosition: MapCameraPosition
     
@@ -26,24 +26,25 @@ struct ListingDetailView: View {
     
     var body: some View {
         ScrollView {
-            ZStack(alignment: .topLeading) {
+            ZStack {
                 ListingImageCarouselView(listing: listing)
                     .frame(height: 320)
-                
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundStyle(.black)
-                        .background {
-                            Circle()
-                                .fill(.white)
-                                .frame(width: 32, height: 32)
+                    .overlay(alignment: .topLeading)  {
+                        Button {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "chevron.left")
+                                .foregroundStyle(.black)
+                                .background {
+                                    Circle()
+                                        .fill(.white)
+                                        .frame(width: 32, height: 32)
+                                }
+                                .padding(.top, 60)
+                                .padding(.leading, 35)
                         }
-                }
-                .padding(42)
+                    }
             }
-             
             
             // MARK: - Room info view
             VStack(alignment: .leading, spacing: 8) {
