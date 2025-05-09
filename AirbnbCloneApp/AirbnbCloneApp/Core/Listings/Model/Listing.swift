@@ -92,8 +92,8 @@ enum ListingAmenities: Int, Codable, Identifiable, Hashable {
         case .laundry: return "washer"
         case .tv: return "tv"
         case .alarmSystem: return "checkerboard.shield"
-        case .office: return "pencil.and.ruller.fill"
-        case .balcony: return "building`"
+        case .office: return "pencil.and.ruler.fill"
+        case .balcony: return "building"
         }
     }
 }
